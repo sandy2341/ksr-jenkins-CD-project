@@ -2,8 +2,8 @@ pipeline {
 
   environment {
     app = "webapp"
-    environment = "qa"
-    namespace = "qa"
+    environment = "prod"
+    namespace = "prod"
   }
   agent any
 
@@ -11,7 +11,7 @@ pipeline {
 
       stage ('Checkout SCM'){
         steps {
-          checkout([$class: 'GitSCM', branches: [[name: '*/qa']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/sandy2341/ksr-jenkins-CD-project.git']]])
+          checkout([$class: 'GitSCM', branches: [[name: '*/prod']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'git', url: 'https://github.com/sandy2341/ksr-jenkins-CD-project.git']]])
         }
       }
 	  
