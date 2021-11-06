@@ -1,6 +1,6 @@
 deployment:
   replicaCount: 1
-  image: dpthub/webapp
+  image: mydoc04/webapp
 resources:
   requests:
     cpu: "250m"
